@@ -43,12 +43,27 @@ def prompt():
     print("|   You can select either GO North, East, South, or West to proceed through the dungeon.    |")
     print("|-------------------------------------------------------------------------------------------|")
     sleep(1)
-    print("\t\tWelcome to the Dungeon of Azure\n\n\
-You must collect all nine items before fighting the final boss.\n\n\
-Moves:\t'go {direction}' (north, south, east, or west)\n\
-\t'get {item}' (add nearby item to inventory)\n")
-    print("DON'T FORGET TO ADD GO AND GET TO YOUR COMMANDS!")
-    input("Press the ENTER key to continue...")
+    print("|-------------------------------------------------------------------------------------------|")
+    print("|                           You must collect all nine items before                          |")
+    print("|                           fighting the final boss. Good luck!                            |")
+    print("|-------------------------------------------------------------------------------------------|")
+    sleep(1)
+    print("|-------------------------------------------------------------------------------------------|")
+    print("|                                   Moves:                                                  |")
+    print("|                                   'go {direction}'                                        |")
+    print("|                                   'get {item}'                                            |")
+    print("|-------------------------------------------------------------------------------------------|")
+    sleep(1)
+    print("|-------------------------------------------------------------------------------------------|")
+    input("|                                   Press the ENTER key to continue...                      |")
+    print("|-------------------------------------------------------------------------------------------|")
+
+#     print("\t\tWelcome to the Dungeon of Azure\n\n\
+# You must collect all nine items before fighting the final boss.\n\n\
+# Moves:\t'go {direction}' (north, south, east, or west)\n\
+# \t'get {item}' (add nearby item to inventory)\n")
+#     print("DON'T FORGET TO ADD GO AND GET TO YOUR COMMANDS!")
+#     input("Press the ENTER key to continue...")
 
 
 
