@@ -45,7 +45,7 @@ def prompt():
     sleep(1)
     print("\t\tWelcome to the Dungeon of Azure\n\n\
 You must collect all nine items before fighting the final boss.\n\n\
-Moves:\t'go {direction}' (travel north, south, east, or west)\n\
+Moves:\t'go {direction}' (north, south, east, or west)\n\
 \t'get {item}' (add nearby item to inventory)\n")
     print("DON'T FORGET TO ADD GO AND GET TO YOUR COMMANDS!")
     input("Press the ENTER key to continue...")
