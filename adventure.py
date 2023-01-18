@@ -174,13 +174,14 @@ while True:
         if nearby_item not in inventory:
 
             if nearby_item[-1] == 's':
-                print(f"You see {nearby_item}")
+                print(bcolors.WARNING + bcolors.UNDERLINE + f"You see {nearby_item}" + bcolors.ENDC)
 
             elif nearby_item[0] in vowels:
-                print(f"You see an {nearby_item}")
+                print(bcolors.WARNING + bcolors.UNDERLINE + f"You see an {nearby_item}" + bcolors.ENDC)
 
             else:
-                print(f"You see a {nearby_item}")
+                print(bcolors.WARNING + bcolors.UNDERLINE + f"You see a {nearby_item}" + bcolors.ENDC)
+                print(bcolors.OKGREEN + f"Do you want to GET the {nearby_item}?" + bcolors.ENDC)
     
     # Boss encounter
     if 'Boss 1' in rooms[current_room].keys():
