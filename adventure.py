@@ -238,7 +238,7 @@ while True:
         
 
         if len(inventory) < 1:
-            print("You enter the room and the Boss attacks you.")
+            print(f"You enter the room and {rooms[current_room]['Boss 1']} attacks you.")
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 1 item to fight with the Boss." + bcolors.ENDC)
             sleep(4)
@@ -305,7 +305,7 @@ while True:
             
 
         else:
-            print(f"You enter the room and the {rooms[current_room]['Boss 2']} attacks you.")
+            print(f"You enter the room and {rooms[current_room]['Boss 2']} attacks you.")
             sleep(2)
             print(f"You attack the {rooms[current_room]['Boss 2']}.")
             sleep(4)
@@ -771,11 +771,11 @@ while True:
     print("You can go:")
     for direction in rooms[current_room].keys():
         if direction != "Item" and direction != "Boss":
-            print(direction)
+            print(bcolors.OKCYAN + direction + bcolors.ENDC)
 
 
     # Accepts player's move as input
-    user_input = input("Enter your move:\n")
+    user_input = input(bcolors.WARNING + "Enter your move:\n" + bcolors.ENDC)
 
     # Splits move into words
     next_move = user_input.split(' ')
@@ -799,10 +799,10 @@ while True:
 
         try:
             current_room = rooms[current_room][direction]
-            msg = f"You traveled {direction}"
+            msg = bcolors.OKGREEN + f"You traveled {direction}" + bcolors.ENDC
 
         except:
-            msg = "You can't go that way."
+            msg = bcolors.FAIL + "You can't go that way." + bcolors.ENDC
     
     # Picking up items
     elif action == "Get":
