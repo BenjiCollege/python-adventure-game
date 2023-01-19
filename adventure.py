@@ -2,7 +2,7 @@ import os
 from time import sleep
 
 def prompt():
-    print(bcolors.OKBLUE)
+    print(bcolors.BG_WHITE)
     print("|-------------------------------------------------------------------------------------------|")
     print("|                             Welcome to the Dungeon of Azure!                              |")
     print("|-------------------------------------------------------------------------------------------|")
@@ -81,9 +81,9 @@ rooms = {
     'Academy of Sorcery': {'North': 'Altus Plateau', 'East': 'Empty Room 7', 'South':'Mirror Maze', 'West': 'Catacombs', 'Item': 'Dark Magic Staff'},
     'Bazaar' : {'North': 'Empty Room 2', 'East': 'Catacombs', 'South':'Empty Room 8', 'West': 'Empty Room 6', 'Item': 'Curved Greatsword'},
     'Meat Locker' : {'North': 'Empty Room 6', 'East': 'Swamp', 'South':'Crumbling Tower', 'West': 'Stormviel Castle', 'Item': 'Healing Potion'},
-    'Quicksand Pit': {'North': 'Stormviel Castle', 'East': 'Crumbling Tower', 'South':'Empty Room 13', 'Item': 'Armor of the Gods'},
+    'Quicksand Pit': {'North': 'Stormviel Castle', 'East': 'Crumbling Tower', 'South':'Empty Room 13', 'Item': 'Armor Set'},
     'Mountain Pass': {'North': 'Mountain Tops', 'East': 'Empty Room 12', 'South':'Forbidden Lands', 'West': 'Empty Room 11', 'Item': 'Crossbow'},
-    'Bat Cavern': {'North': 'Empty Room 10', 'East': 'Empty Room 15', 'West': 'Empty Room 14', 'Item': 'Shield of the Huntress'},
+    'Bat Cavern': {'North': 'Empty Room 10', 'East': 'Empty Room 15', 'West': 'Empty Room 14', 'Item': 'Beast Shield'},
     'Sky Temple': {'North': 'Empty Room 5', 'South':'Empty Room 9', 'West': 'Empty Room 7', 'Item': 'Sacred Seal'},
     'Swamp': {'North': 'Empty Room 1', 'East': 'Empty Room 6', 'South':'Stormviel Castle', 'Item': 'Axe'},
     'Catacombs': {'North': 'Empty Room 3', 'East': 'Academy of Sorcery', 'South':'Dungeon of Azure', 'West': 'Bazaar', 'Boss 1': 'Spinal the Fell Omen'},
@@ -109,7 +109,7 @@ rooms = {
     'Empty Room 11': {'North': 'Mirror Maze', 'East': 'Mountain Pass', 'South':'Limgrave', 'West': 'Academy Gate'},
     'Empty Room 12': {'North': 'Empty Room 9', 'South':'Throne of Azure', 'West': 'Mountain Pass'},
     'Empty Room 13': {'North': 'Quicksand Pit', 'East': 'Empty Room 14'},
-    'Empty Room 14': {'North': 'Crumbling Tower', 'East': 'Bat Cavern'},
+    'Empty Room 14': {'North': 'Crumbling Tower', 'East': 'Bat Cavern', 'West': 'Empty Room 13'},
     'Empty Room 15': {'North': 'Academy Gate', 'East': 'Limgrave', 'West': 'Bat Cavern'},
     }
 
@@ -120,14 +120,30 @@ class bcolors:
     OKCYAN = '\033[96m'
     OKGREEN = '\033[92m'
     WARNING = '\033[93m'
-    FAIL = '\033[91m'
+    BG_RED = '\033[91m'
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+    BG_BLACK = '\033[40m'
+    BG_RED = '\033[41m'
+    BG_GREEN = '\033[42m'
+    BG_YELLOW = '\033[43m'
+    BG_BLUE = '\033[44m'
+    BG_MAGENTA = '\033[45m'
+    BG_CYAN = '\033[46m'
+    BG_WHITE = '\033[47m'
+    FG_BLACK = '\033[30m'
+    FG_RED = '\033[31m'
+    FG_GREEN = '\033[32m'
+    FG_YELLOW = '\033[33m'
+    FG_BLUE = '\033[34m'
+    FG_MAGENTA = '\033[35m'
+    FG_CYAN = '\033[36m'
+    FG_WHITE = '\033[37m'
 
     # print(bcolors.OKGREEN + "OKGREEN: No active frommets remain. Continue?" + bcolors.ENDC)
     # print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
-    # print(bcolors.FAIL + "FAIL: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.BG_RED + "BG_RED: No active frommets remain. Continue?" + bcolors.ENDC)
     # print(bcolors.HEADER + "HEADER: No active frommets remain. Continue?" + bcolors.ENDC)
     # print(bcolors.OKBLUE + "OKBLUE: No active frommets remain. Continue?" + bcolors.ENDC)
     # print(bcolors.OKCYAN + "OKCYAN: No active frommets remain. Continue?" + bcolors.ENDC)
@@ -159,7 +175,7 @@ while True:
 
     # Display player info
     print("|-------------------------------------------------------------------------------------------|")
-    print(bcolors.HEADER + bcolors.BOLD + f"You are in the {current_room}"+ bcolors.ENDC)
+    print(bcolors.BG_BLACK + bcolors.BOLD + f"You are in the {current_room}"+ bcolors.ENDC)
     print(bcolors.WARNING + f"Inventory : {inventory}" + bcolors.ENDC)
     print("|-------------------------------------------------------------------------------------------|")
 
@@ -181,11 +197,11 @@ while True:
 
             else:
                 print(bcolors.WARNING + bcolors.UNDERLINE + f"You see a {nearby_item}" + bcolors.ENDC)
-                print(bcolors.OKGREEN + f"Do you want to GET the {nearby_item}?" + bcolors.ENDC)
+                print(bcolors.BG_GREEN + f"Do you want to GET the {nearby_item}?" + bcolors.ENDC)
     
     # Boss encounter
     if 'Boss 1' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")
         print("|        _____     _         _    _   _          _____     _ _    _____                     |")
         print("|       |   __|___|_|___ ___| |  | |_| |_ ___   |   __|___| | |  |     |_____ ___ ___       |")
@@ -242,7 +258,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 1 item to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 1']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 1']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
 
@@ -260,7 +276,7 @@ while True:
             
     
     if 'Boss 2' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")
         print("| _____             _    _____                 _             __                _   _        |")
         print("|| __  |___ ___ ___| |  |  _  |___ ___ ___ ___| |_ ___ ___  |  |   ___ ___ ___| |_| |_ ___  |")
@@ -299,7 +315,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 2 items to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 2']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 2']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
             
@@ -318,7 +334,7 @@ while True:
             
 
     if 'Boss 3' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")
         print("|                   _____            _____           _    _____ _         _                 |")
         print("|                  |     |___ ___   |   __|_ _ ___ _| |  |   __|_|___ ___| |_               |")
@@ -357,7 +373,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 3 items to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 3']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 3']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
             
@@ -376,7 +392,7 @@ while True:
             
 
     if 'Boss 4' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")   
         print("|         _____ _                    _____           _      _____                           |")  
         print("|        |   __| |_ ___ ___ _____   |  |  |___ _ _ _| |_   |   __|_____ ___ _ _ ___         |")
@@ -412,7 +428,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 4 items to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 4']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 4']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
             
@@ -431,7 +447,7 @@ while True:
             
 
     if 'Boss 5' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")
         print("|       _____ _   _            ____                         _____                 _ _       |")
         print("|      |   __| |_| |___ ___   |    \ ___ ___ ___ ___ ___   |   __|___ ___ _ _ ___| | |      |")
@@ -465,7 +481,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 5 items to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 5']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 5']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
             
@@ -484,7 +500,7 @@ while True:
             
 
     if 'Boss 6' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")
         print("|                                 _____                                                     |")
         print("|                                |   __|_ _  ___ ___ ___ _____ ___                          |")
@@ -525,7 +541,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 6 items to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 6']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 6']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
             
@@ -544,7 +560,7 @@ while True:
             
 
     if 'Boss 7' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")
         print("|      _____     _   _    ____                                 _____     _             _    |")
         print("|     |  |  |___|_|_| |  |    \ ___ _ _ ___ _ _ ___ ___ ___   | __  |_ _| |_ ___ ___ _| |   |")
@@ -581,7 +597,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 7 items to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 7']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 7']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
             
@@ -600,7 +616,7 @@ while True:
             
 
     if 'Boss 8' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")
         print("|               _____     _ _         _      _____                     _                    |")
         print("|              |  |  |___| |_|___ ___| |_   |   __|___ ___ ___ ___ _ _| |___                |")
@@ -637,7 +653,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 7 items to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 8']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 8']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
             
@@ -656,7 +672,7 @@ while True:
             
     
     if 'Boss 9' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")
         print("|         __              _        ___    ____          _   _      _____     _              |")
         print("|        |  |   ___ ___ _| |   ___|  _|  |    \ ___ ___| |_| |_   |     |___| |_ ___        |")
@@ -690,7 +706,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 8 items to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 9']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 9']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
             
@@ -709,7 +725,7 @@ while True:
             
     
     if 'Boss 10' in rooms[current_room].keys():
-        print(bcolors.FAIL)
+        print(bcolors.BG_RED)
         print("|-------------------------------------------------------------------------------------------|")
         print("|         ____                      _           _    _____ _         _   _                  |")
         print("|        |    \ ___ ___ ___ ___ ___| |___ ___ _| |  |  _  | |___ ___|_|_| |_ _ ___ _ _      |")
@@ -749,7 +765,7 @@ while True:
             print(bcolors.UNDERLINE + f"You have {inventory} items to fight with." + bcolors.ENDC)
             print(bcolors.OKCYAN + "You need 9 items to fight with the Boss." + bcolors.ENDC)
             sleep(4)
-            print(bcolors.FAIL + f"You lost a fight with {rooms[current_room]['Boss 10']}." + bcolors.ENDC)
+            print(bcolors.BG_RED + f"You lost a fight with {rooms[current_room]['Boss 10']}." + bcolors.ENDC)
             print(bcolors.WARNING + "PRESS UP ARROW AND ENTER TO RESTART" + bcolors.ENDC)
             break
             
@@ -802,7 +818,9 @@ while True:
             msg = bcolors.OKGREEN + f"You traveled {direction}" + bcolors.ENDC
 
         except:
-            msg = bcolors.FAIL + "You can't go that way." + bcolors.ENDC
+            msg = bcolors.BG_RED + "You can't go that way." + bcolors.ENDC
+
+
     
     # Picking up items
     elif action == "Get":
@@ -812,7 +830,7 @@ while True:
                 if item not in inventory:
 
                     inventory.append(rooms[current_room]["Item"])
-                    msg = f"{item} retrieved!"
+                    msg = bcolors.FG_GREEN + f"{item} retrieved!" + bcolors.ENDC
 
                 else:
                     msg = f"You already have the {item}"
@@ -825,6 +843,14 @@ while True:
     # Exit program
     elif action == "Exit":
         break
+
+    # Inventory command
+    elif action == "Inventory":
+        msg = f"You have {inventory} in your inventory"
+
+    # Help command
+    elif action == "Help":
+        msg = "Commands: Go, Get, Exit, Help, Inventory"
 
     # Any other commands invalid
     else:
