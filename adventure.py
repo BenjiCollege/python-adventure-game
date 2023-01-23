@@ -60,14 +60,6 @@ def prompt():
     print("|-------------------------------------------------------------------------------------------|")
     print(bcolors.ENDC)
 
-#     print("\t\tWelcome to the Dungeon of Azure\n\n\
-# You must collect all nine items before fighting the final boss.\n\n\
-# Moves:\t'go {direction}' (north, south, east, or west)\n\
-# \t'get {item}' (add nearby item to inventory)\n")
-#     print("DON'T FORGET TO ADD GO AND GET TO YOUR COMMANDS!")
-#     input("Press the ENTER key to continue...")
-
-
 
 # Clear screen
 def clear():
@@ -140,7 +132,7 @@ class bcolors:
     FG_MAGENTA = '\033[35m'
     FG_CYAN = '\033[36m'
     FG_WHITE = '\033[37m'
-
+    # # Example of how to use colors
     # print(bcolors.OKGREEN + "OKGREEN: No active frommets remain. Continue?" + bcolors.ENDC)
     # print(bcolors.WARNING + "Warning: No active frommets remain. Continue?" + bcolors.ENDC)
     # print(bcolors.BG_RED + "BG_RED: No active frommets remain. Continue?" + bcolors.ENDC)
@@ -149,6 +141,23 @@ class bcolors:
     # print(bcolors.OKCYAN + "OKCYAN: No active frommets remain. Continue?" + bcolors.ENDC)
     # print(bcolors.BOLD + "BOLD: No active frommets remain. Continue?" + bcolors.ENDC)
     # print(bcolors.UNDERLINE + "UNDERLINE: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.FG_BLACK + "FG_BLACK: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.FG_RED + "FG_RED: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.FG_GREEN + "FG_GREEN: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.FG_YELLOW + "FG_YELLOW: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.FG_BLUE + "FG_BLUE: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.FG_MAGENTA + "FG_MAGENTA: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.FG_CYAN + "FG_CYAN: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.FG_WHITE + "FG_WHITE: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.BG_BLACK + "BG_BLACK: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.BG_RED + "BG_RED: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.BG_GREEN + "BG_GREEN: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.BG_YELLOW + "BG_YELLOW: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.BG_BLUE + "BG_BLUE: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.BG_MAGENTA + "BG_MAGENTA: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.BG_CYAN + "BG_CYAN: No active frommets remain. Continue?" + bcolors.ENDC)
+    # print(bcolors.BG_WHITE + "BG_WHITE: No active frommets remain. Continue?" + bcolors.ENDC)
+
 
 # List of vowels
 vowels = ['a', 'e', 'i', 'o', 'u']
@@ -191,9 +200,6 @@ while True:
 
             if nearby_item[-1] == 's':
                 print(bcolors.WARNING + bcolors.UNDERLINE + f"You see {nearby_item}" + bcolors.ENDC)
-
-            elif nearby_item[0] in vowels:
-                print(bcolors.WARNING + bcolors.UNDERLINE + f"You see an {nearby_item}" + bcolors.ENDC)
 
             else:
                 print(bcolors.WARNING + bcolors.UNDERLINE + f"You see a {nearby_item}" + bcolors.ENDC)
